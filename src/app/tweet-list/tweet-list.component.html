@@ -1,0 +1,27 @@
+<mat-toolbar color="primary" class="toolbar">
+    <mat-toolbar-row class="space-between">
+      <span>MiniTwitter</span>
+      <button mat-button (click)="isOpenNewTweet=true"> Nuevo tweet <mat-icon>add</mat-icon></button>
+    </mat-toolbar-row>
+</mat-toolbar>
+<div *ngIf="isOpenNewTweet" class="display-center">
+  <mat-card class="tweet-card">
+    <mat-card-content>
+      <mat-form-field [formGroup]="newTweetForm" >
+        <mat-label>Nuevo tweet:</mat-label>
+        <textarea matInput type="text" placeholder="Que hay de nuevo..." formControlName="mensaje"></textarea>
+    </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions class="space-between"> 
+      <button (click)="newTweet()" mat-button>Crear</button>
+      <button (click)="isOpenNewTweet=false" mat-button>Cerrar<mat-icon>close</mat-icon></button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>
+
+<div *ngFor="let tweet of tweets">
+  <app-tweet-item [tweetItem]="tweet" ></app-tweet-item>
+</div>
+
+

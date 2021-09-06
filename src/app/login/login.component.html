@@ -1,0 +1,26 @@
+<div class="login-body">
+
+  <img class="login-logo" src="../../assets/logo.png" />
+  <form [formGroup]="loginForm" (ngSubmit)="login()" class="login-form">
+    <span class="error" *ngIf="checkError('email')" >Email inválido</span>
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput placeholder="Email" formControlName="email" />
+    </mat-form-field>
+
+    <span class="error" *ngIf="checkError('password')">Password inválido</span>
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput placeholder="Password" formControlName="password">
+    </mat-form-field>
+
+    <div class="full-width">
+      <button [disabled]="loginForm.invalid"  mat-raised-button color="primary" class="full-width">Login</button>
+    </div>
+
+    <div class="full-width link-line" >
+      ¿Aún no tienes cuenta? <a  routerLink="/register" >Regístrate</a>
+    </div>
+
+  </form>
+</div>

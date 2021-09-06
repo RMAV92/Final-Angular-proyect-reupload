@@ -1,0 +1,16 @@
+.toolbar {
+    margin-bottom: 20px;
+}
+.space-between{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.display-center{
+    display: flex;
+    justify-content: center;
+}
+.tweet-card{
+    margin-bottom: 30px;
+    width: 50%;
+}
